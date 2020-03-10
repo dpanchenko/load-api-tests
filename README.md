@@ -58,7 +58,7 @@ npm start
 To run this application and test suite it's a requirement to have local installed `MongoDB`.
 There is possible to containerize this into Docker and create docker-compose to spin up this app and MongoDB in containers, but it's a bit outside of scope of this test task. Also its possible to setup `CircleCI` configuration (I mostly use CircleCI in my projects) to run test suite during CI workflow, `CircleCI` support using images with preinstallled `MongoDB` to run integration tests.
 
-- About application.
+## Application
 
 This application implemented like rest-api service which has endpoints to import data into database and endpoints to get `patients` list and `patient` info. There is automaticaly generated documentation, which available by accessing url `http://<server-url:port>/docs` after start server.
 There is implemented test suites with examples of unit testing and integration testing the functionality. I'm using one of most popular test framework `mocha` (https://mochajs.org) with also popular assertion library `chai` (https://www.chaijs.com). As requested for report generation I'm using `mochawesome` plugin which is allow to generate well formated html reports and allow to add to these reports some extra context. I decided to use these tools and add some requested information (like ids of patients with empty names) as context to the report.
@@ -75,6 +75,7 @@ Integration tests implemented all requested changes, using sample file for loadi
 - you can open report manually, just open file `public/report/index.html`
 - or you can start the server by the command `npm start` (or `npm run dev`)
 - get access to the report by url `http://localhost:8080/report/`
+
 - get access to the api documantation by url `http://localhost:8080/docs/`
 
 ## Code description

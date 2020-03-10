@@ -1,0 +1,41 @@
+module.exports = {
+  extends: 'airbnb-base',
+  env: {
+    browser: true,
+    node: true,
+    es6: true,
+    mocha: true,
+  },
+  plugins: [
+    'mocha',
+    'async-await',
+  ],
+  globals: {
+    APP_ROOT_DIR: true,
+  },
+  parserOptions: {
+    ecmaVersion: 8,
+    sourceType: 'module',
+    ecmaFeatures: {},
+  },
+  rules: {
+    'class-methods-use-this': 0,
+    'func-names': 0,
+    'guard-for-in': 0,
+    'global-require': 0,
+    'import/no-dynamic-require': 0,
+    'import/newline-after-import': 0,
+    'import/no-extraneous-dependencies': 0,
+    'import/no-unresolved': 0,
+    'key-spacing': 0,
+    'no-shadow': 0,
+    'no-underscore-dangle': 0,
+    'no-restricted-syntax': 0,
+    'no-multi-spaces': 0,
+    'no-param-reassign': 0,
+    'max-len': 0,
+    'camelcase': 0,
+    'object-curly-newline': 0,
+    'semi': ['error'],
+  },
+};

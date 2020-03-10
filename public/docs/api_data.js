@@ -1,0 +1,338 @@
+define({ "api": [
+  {
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "optional": false,
+            "field": "varname1",
+            "description": "<p>No type.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "varname2",
+            "description": "<p>With type.</p>"
+          }
+        ]
+      }
+    },
+    "type": "",
+    "url": "",
+    "version": "0.0.0",
+    "filename": "./public/docs/main.js",
+    "group": "/Users/kocmoc/Work/digitory/load-api/public/docs/main.js",
+    "groupTitle": "/Users/kocmoc/Work/digitory/load-api/public/docs/main.js",
+    "name": ""
+  },
+  {
+    "type": "post",
+    "url": "/patients/import",
+    "title": "Import patients",
+    "description": "<p>Import patients from flat file to local database.</p>",
+    "name": "ImportPatients",
+    "group": "Patients",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "count",
+            "description": "<p>count of imported posts.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "./app/modules/patients/router.js",
+    "groupTitle": "Patients"
+  },
+  {
+    "type": "get",
+    "url": "/patients/:id",
+    "title": "Get patient",
+    "description": "<p>Get patient data from local database by Member ID.</p>",
+    "name": "PatientInfo",
+    "group": "Patients",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Patient Member ID.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "result",
+            "description": "<p>Patient data.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "result.programId",
+            "description": "<p>Program Identifier.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "result.dataSource",
+            "description": "<p>Data Source.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "result.cardNumber",
+            "description": "<p>Card Number.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "result.memberId",
+            "description": "<p>Member ID.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "result.firstName",
+            "description": "<p>First Name.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "result.lastName",
+            "description": "<p>Last name.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Date",
+            "optional": false,
+            "field": "result.dateOfBirth",
+            "description": "<p>Date of Birth.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "result.address1",
+            "description": "<p>Address 1.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "result.address2",
+            "description": "<p>Address 2.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "result.city",
+            "description": "<p>City.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "result.state",
+            "description": "<p>State.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "result.zipCode",
+            "description": "<p>Zip code.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "result.telephoneNumber",
+            "description": "<p>Telephone number.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "result.emailAddress",
+            "description": "<p>Email Address.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "result.consent",
+            "description": "<p>CONSENT.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "result.mobilePhone",
+            "description": "<p>Mobile Phone.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "result.emails",
+            "description": "<p>Patient emails.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "result.emails.dayNumber",
+            "description": "<p>Cadence day number.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "result.emails.data",
+            "description": "<p>Email data.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n {\n     \"programId\": \"50777445\",\n     \"dataSource\": \"WEB 3RD PARTY\",\n     \"cardNumber\": \"564232340\",\n     \"memberId\": \"12045\",\n     \"firstName\": \"LOAD\",\n     \"lastName\": \"TEST 1\",\n     \"dateOfBirth\": \"1969-03-19T17:00:00.000Z\",\n     \"address1\": \"3100 S Ashley Drive\",\n     \"address2\": \"\",\n     \"city\": \"Chandler\",\n     \"state\": \"AZ\",\n     \"zipCode\": \"85286\",\n     \"telephoneNumber\": \"\",\n     \"emailAddress\": \"test1@humancaresystems.com\",\n     \"consent\": true,\n     \"mobilePhone\": \"1234567890 \",\n     \"emails\": [\n         {\n             \"dayNumber\": 1\n         },\n         {\n             \"dayNumber\": 2\n         },\n         {\n             \"dayNumber\": 3\n         },\n         {\n             \"dayNumber\": 4\n         }\n     ]\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./app/modules/patients/router.js",
+    "groupTitle": "Patients"
+  },
+  {
+    "type": "get",
+    "url": "/patients",
+    "title": "Get list",
+    "description": "<p>Get list of patients from local database. Support pagination.</p>",
+    "name": "PatientsList",
+    "group": "Patients",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "Number",
+            "optional": false,
+            "field": "x-offset",
+            "description": "<p>Pagination offset.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "Number",
+            "optional": false,
+            "field": "x-limit",
+            "description": "<p>Pagination limit.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n  \"x-offset\": \"10\",\n  \"x-limit\": \"5\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "result",
+            "description": "<p>Patients list result.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "result.count",
+            "description": "<p>Count of all patients in DB.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "result.items",
+            "description": "<p>List of patients.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "result.items.memberId",
+            "description": "<p>Member ID.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "result.items.firstName",
+            "description": "<p>First Name.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "result.items.lastName",
+            "description": "<p>Last name.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "result.items.emailAddress",
+            "description": "<p>Email Address.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "result.items.consent",
+            "description": "<p>CONSENT.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n {\n     \"count\": 18,\n     \"items\": [\n         {\n             \"memberId\": \"12045\",\n             \"firstName\": \"LOAD\",\n             \"lastName\": \"TEST 1\",\n             \"emailAddress\": \"test1@humancaresystems.com\",\n             \"consent\": true,\n         },\n         {\n             \"memberId\": \"12045\",\n             \"firstName\": \"LOAD\",\n             \"lastName\": \"TEST 1\",\n             \"emailAddress\": \"test1@humancaresystems.com\",\n             \"consent\": true,\n         }\n     ]\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./app/modules/patients/router.js",
+    "groupTitle": "Patients"
+  }
+] });
